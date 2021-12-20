@@ -1,0 +1,162 @@
+
+
+#mainTitle {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(205, 168, 240);
+}
+
+#jumbotron {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 1;
+  background-color: gray;
+
+
+
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(22, 22, 22);
+
+
+}
+
+
+
+.invest-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  background-color: rgba(142, 222, 135, 0.952);
+}
+
+.invest-flexbox {
+  display: flex;
+  margin: 10px;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 5px;
+
+}
+
+.invest-container> * {
+  flex: 1 1 33%;
+  background-color: rgb(77, 175, 214);
+
+}
+
+.invest-flexbox > h3 {
+  border-right: 2px solid gray;
+  padding: 5px;
+}
+
+.invest-flexbox > p {
+  padding-left: 5px;
+}
+
+.invest-item1{
+
+
+
+
+}
+.invest-item2{
+
+}
+.invest-item3{
+
+}
+.invest-item4{
+
+}
+.invest-item5{
+
+}
+
+
+.jumbotron {
+
+}
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+
+  opacity: .5;
+  background-image: url("https://bitshouts.com/wp-content/uploads/2020/06/Bitcoin-and-Ethereum-coins.png");
+  background-position: center;
+  min-height: 75em;
+  background-repeat: no-repeat;
+  border: 5px solid white;
+}
+
+.btc,
+.eth {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(160, 160, 160);
+  border: 5px solid rgb(128, 127, 127);
+  height: 50px;
+  flex-grow: 2;
+  margin: 5em;
+  border-radius: 1em;
+  opacity: 75%;
+  min-height: 15em;
+}
+
+
+
+
+
+
+/* HIDE SCROLL BARS */
+body::-webkit-scrollbar {
+  display: none; /* chrome and safari*/
+
+}
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+#overlap {
+  position: absolute;
+  height: 100px;
+  background-color: blue ;
+
+}
+
+.learn {
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 5em;
+
+}
+
+.learn-btc,
+.learn-eth {
+  display: flex;
+  min-height: 100px;
+  background-color: khaki;
+  border: 10px solid white;
+  flex-grow: 1;
+  border-radius: 5em;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+  align-items: center;
+}
+
+.learn-btc > h3,
+.learn-eth > h3{
+
+
+}
