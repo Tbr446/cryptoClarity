@@ -1,9 +1,11 @@
-
+:root {
+  --main-item-color: gray;
+}
 
 #mainTitle {
   display: flex;
   justify-content: center;
-  background-color: rgb(205, 168, 240);
+  background-color: var(--main-item-color);
 }
 
 #jumbotron {
@@ -31,7 +33,7 @@ body {
   display: flex;
   flex-wrap: wrap;
 
-  background-color: rgba(142, 222, 135, 0.952);
+  background-color: var(--main-item-color);
 }
 
 .invest-flexbox {
@@ -138,6 +140,7 @@ body {
   align-content: center;
   justify-content: center;
   gap: 5em;
+  background-color: var(--main-item-color);
 
 }
 
@@ -145,8 +148,8 @@ body {
 .learn-eth {
   display: flex;
   min-height: 100px;
-  background-color: khaki;
-  border: 10px solid white;
+  background-color:rgb(77, 175, 214);
+  border: 5px solid black;
   flex-grow: 1;
   border-radius: 5em;
   justify-content: center;
