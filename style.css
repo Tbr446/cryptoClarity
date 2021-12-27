@@ -1,12 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+html {
+  font-family: 'DM Sans', sans-serif;
+  color: gray;
+
+}
+
+h1,
+h2,
+h3 {
+ color: #E5F1B3;
+}
+
 :root {
   --main-item-color: gray;
 }
 
-#mainTitle {
+body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-color: var(--main-item-color);
+  align-content: flex-start;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  background-color: rgb(38, 38, 38);
+
+
 }
+body::-webkit-scrollbar {
+  display: none; /* chrome and safari*/
+
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+  border: 5px solid blanchedalmond;
+  order: 1;
+
+}
+nav > ul{
+  display: flex;
+  gap: 200px;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+nav > ul > li {
+
+  padding: 20px;
+  border-radius: 40%;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+37,1+37,0+100;White+to+Transparent */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 37%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+
+
+}
+
+.main-title {
+  display: flex;
+  border: 5px solid blanchedalmond;
+
+   ;
+}
+
+.inner-header {
+    ;
+}
+
+.inner-header > img {
+   ;
+
+}
+
 
 #jumbotron {
   display: flex;
@@ -14,15 +85,6 @@
   flex-shrink: 1;
   background-color: gray;
 
-
-
-}
-
-
-body {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(22, 22, 22);
 
 
 }
@@ -47,7 +109,7 @@ body {
 
 .invest-container> * {
   flex: 1 1 33%;
-  background-color: rgb(77, 175, 214);
+  background-color: rgb(38, 38, 38);
 
 }
 
@@ -117,14 +179,7 @@ body {
 
 
 /* HIDE SCROLL BARS */
-body::-webkit-scrollbar {
-  display: none; /* chrome and safari*/
 
-}
-body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
 
 
 #overlap {
@@ -148,7 +203,7 @@ body {
 .learn-eth {
   display: flex;
   min-height: 100px;
-  background-color:rgb(77, 175, 214);
+  background-color:rgb(38, 38, 38);;
   border: 5px solid black;
   flex-grow: 1;
   border-radius: 5em;
@@ -163,3 +218,5 @@ body {
 
 
 }
+
+
