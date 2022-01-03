@@ -8,12 +8,13 @@ html {
 h1,
 h2,
 h3 {
- color: #E5F1B3;
+ color: #D9D9D9;
 }
 
 :root {
   --main-item-color: gray;
 }
+
 
 body {
   display: flex;
@@ -22,48 +23,96 @@ body {
   align-content: flex-start;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-  background-color: rgb(38, 38, 38);
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+
+
 
 
 }
+
+
+
 body::-webkit-scrollbar {
   display: none; /* chrome and safari*/
 
 }
 
-nav {
+/* NAV SECTION */
+#nav-links {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  align-content: space-around;
-  border: 5px solid blanchedalmond;
-  order: 1;
+  border: 1px solid white;
+  z-index: 1;
+  position: sticky;
 
 }
-nav > ul{
-  display: flex;
-  gap: 200px;
-  list-style-type: none;
-  flex-wrap: wrap;
+
+#navlogo {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
 }
 
-nav > ul > li {
+.nav-list {
+  list-style: none;
+}
+.nav-list > li {
+  display: inline-block;
+  padding: 0px 15px ;
+}
+
+
+
+
+
+
+
+
+#link0 {
+
+
+}
+#link1 {
+
+}
+#link2 {
+
+}
+
+/* STICKY NAV js will add this in scroll position*/
+.sticky {
+  position: fixed;
+  top: 0;
+
+}
+
+li > a:link {
+  color: #7A0202;
+}
+li > a:visited {
+  color: #7A0202;
+}
+
+#nav-links > ul > li:hover {
+  background-color: #D9D9D9;
+  opacity: 70%;
+}
+#nav-links > ul > li {
 
   padding: 20px;
   border-radius: 40%;
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+37,1+37,0+100;White+to+Transparent */
-background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 37%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-
-
+  transition: all 0.5s ease 0s;
 
 }
 
+
+
+
 .main-title {
   display: flex;
+  justify-content: center;
+  min-height: auto;
   border: 5px solid blanchedalmond;
 
    ;
@@ -74,7 +123,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .inner-header > img {
-   ;
+min-height: 200px;
+/* border: 5px solid blanchedalmond; */
 
 }
 
@@ -83,10 +133,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   display: flex;
   justify-content: center;
   flex-shrink: 1;
-  background-color: gray;
-
-
-
 }
 
 
@@ -95,7 +141,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   display: flex;
   flex-wrap: wrap;
 
-  background-color: var(--main-item-color);
+  ;
 }
 
 .invest-flexbox {
@@ -103,24 +149,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   margin: 10px;
   border: 3px solid black;
   border-radius: 5px;
-  padding: 5px;
+  padding: .5em;
+  box-shadow: 2px 2px 7px black;
 
 }
 
 .invest-container> * {
   flex: 1 1 33%;
-  background-color: rgb(38, 38, 38);
+  background-color: #272727;
 
 }
 
 .invest-flexbox > h3 {
-  border-right: 2px solid gray;
+  border-right: 2px solid #7A0202;
   padding: 5px;
 }
 
 .invest-flexbox > p {
   padding-left: 5px;
+
 }
+
+
+
+/* may need to do onmouseover to get the boxes on hover */
 
 .invest-item1{
 
@@ -182,12 +234,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
 
-#overlap {
-  position: absolute;
-  height: 100px;
-  background-color: blue ;
-
-}
 
 .learn {
 
@@ -195,7 +241,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   align-content: center;
   justify-content: center;
   gap: 5em;
-  background-color: var(--main-item-color);
 
 }
 
@@ -218,5 +263,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
 }
+
+
+
 
 

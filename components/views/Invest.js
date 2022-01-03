@@ -70,4 +70,16 @@ export default st => html`
       </p>
     </div>
   </section>
+
+  <section class="fomocalc-container">
+    <label for="start">Buy date:</label>
+
+    <input
+      type="month"
+      id="start"
+      name="trip-start"
+      min="2018-01"
+      max="2018-12-31"
+    />
+  </section>
 `;
