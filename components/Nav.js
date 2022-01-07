@@ -1,4 +1,5 @@
 import html from "html-literal";
+import * as views from "./views";
 import navlogo from "../assets/CryptoClarityC.svg";
 
 export default links => html`
