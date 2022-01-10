@@ -2,6 +2,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const emails = require("./routers/emails");
 // Initialize the Express application
 const app = express();
 
@@ -21,8 +22,26 @@ const logging = (request, response, next) => {
   console.log(`${request.method} ${request.url} ${Date.now()}`);
   next();
 };
+
+// CORS Middleware
+const cors = (req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type, Accept,Authorization,Origin"
+  );
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
+};
+
+app.use(cors);
 app.use(express.json());
 app.use(logging);
+app.use("/emails", emails);
 
 // Handle the request with HTTP GET method from http://localhost:4040/status
 app.get("/status", (request, response) => {
@@ -30,16 +49,6 @@ app.get("/status", (request, response) => {
   // Create the response body
   // End and return the response
   response.send(JSON.stringify({ message: "Service healthy" }));
-});
-
-app.post("/email/:id/:provider", (request, response) => {
-  const id = request.params.id;
-  const provider = request.params.provider;
-  response.status(418).json({
-    message: "Success",
-    email_id: id,
-    email_provider: provider
-  });
 });
 
 // Tell the Express app to start listening
