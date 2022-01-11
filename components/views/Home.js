@@ -5,16 +5,15 @@ const kelvinToFahrenheit = kelvinTemp =>
 
 export default st => html`
   <div class="currentview"><h2>Home</h2></div>
-  <h3>
+  <!-- <h3>
     Temperature in ${st.weather.city} is
     ${kelvinToFahrenheit(st.weather.temp)}F. It feels like
     ${kelvinToFahrenheit(st.weather.feelsLike)}F.
-  </h3>
+  </h3> -->
 
   <h4 id="btc-price">
     Bitcoin price is
     <p class="cl">${st.crypto.btcPrice}</p>
-    <!-- ${greenOrRed(st.crypto.change24hr)}</p> -->
   </h4>
 
   <div id="homepage-container">
@@ -47,16 +46,16 @@ export default st => html`
   </div>
 `;
 
-const greenOrRed = change => {
-  let cl = document.querySelector(".cl");
-  if (change < 0) {
-    console.log("negative");
-    cl.classList.add("btc-up");
-  }
-  if (change > 0) {
-    console.log("positive");
-    cl.classList.remove("cl");
-  }
-};
+// const greenOrRed = change => {
+//   let cl = document.querySelector(".cl");
+//   if (change < 0) {
+//     console.log("negative");
+//     cl.classList.add("btc-up");
+//   }
+//   if (change > 0) {
+//     console.log("positive");
+//     cl.classList.remove("cl");
+//   }
+// };
 
 //BTC COLOR CHANGE (NOT WORKING)
