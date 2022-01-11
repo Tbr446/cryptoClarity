@@ -5,7 +5,7 @@ import navlogo from "../assets/CryptoClarityC.svg";
 export default links => html`
   <nav id="nav-links">
     <!-- CLICKABLE LOGO below NOT WORKING -->
-    <a href="#"><img id="navlogo" src="${navlogo}"/></a>
+    <a id="nav-logo" href="#"><img class="navlogo" src="${navlogo}"/></a>
     <ul class="nav-list">
       ${links.map(
         link =>
