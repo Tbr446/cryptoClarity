@@ -33,6 +33,7 @@ function addEventListeners(st) {
   };
 
   let navbar = document.getElementById("nav-links");
+  let logo = document.getElementById("navlogo");
   let sticky = navbar.offsetTop;
 
   function stickyNav() {
@@ -42,6 +43,7 @@ function addEventListeners(st) {
       navbar.classList.remove("sticky");
     }
   }
+
   //CALC SECTION
 
   function agiTest() {
@@ -193,48 +195,48 @@ function addEventListeners(st) {
 //   }
 // };
 
-// router.hooks({
-//   before: (done, params) => {
-//     const page =
-//       // eslint-disable-next-line no-prototype-builtins
-//       params && params.hasOwnProperty("page")
-//         ? capitalize(params.page)
-//         : "Home";
+router.hooks({
+  before: (done, params) => {
+    const page =
+      // eslint-disable-next-line no-prototype-builtins
+      params && params.hasOwnProperty("page")
+        ? capitalize(params.page)
+        : "Home";
 
-//     if (page === "Home") {
-//       axios
-//         .get(
-//           `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st.%20louis`
-//         )
-//         .then(response => {
-//           state.Home.weather = {};
-//           state.Home.weather.city = response.data.name;
-//           state.Home.weather.temp = response.data.main.temp;
-//           state.Home.weather.feelsLike = response.data.main.feels_like;
-//           state.Home.weather.description = response.data.weather[0].main;
-//           done();
-//         })
-//         .catch(err => console.log(err));
-//     }
+    if (page === "Home") {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st.%20louis`
+        )
+        .then(response => {
+          state.Home.weather = {};
+          state.Home.weather.city = response.data.name;
+          state.Home.weather.temp = response.data.main.temp;
+          state.Home.weather.feelsLike = response.data.main.feels_like;
+          state.Home.weather.description = response.data.weather[0].main;
+          done();
+        })
+        .catch(err => console.log(err));
+    }
 
-//     if (page === "Home") {
-//       axios
-//         .get(
-//           `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd`
-//         )
-//         .then(response => {
-//           state.Home.crypto = {};
-//           state.Home.crypto.btcPrice = response.data.bitcoin.usd;
-//           state.Home.crypto.change24hr = response.data.bitcoin.usd_24h_change;
+    if (page === "Home") {
+      axios
+        .get(
+          `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true`
+        )
+        .then(response => {
+          state.Home.crypto = {};
+          state.Home.crypto.btcPrice = response.data.bitcoin.usd;
+          state.Home.crypto.change24hr = response.data.bitcoin.usd_24h_change;
 
-//           done();
-//         })
-//         .catch(error => {
-//           console.log("It puked", error);
-//         });
-//     }
-//   }
-// });
+          done();
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    }
+  }
+});
 
 router
   .on({

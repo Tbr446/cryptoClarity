@@ -56,7 +56,7 @@ body::-webkit-scrollbar {
 
 }
 
-#navlogo {
+.navlogo {
   height: 50px;
   width: 50px;
   cursor: pointer;
@@ -94,7 +94,15 @@ body::-webkit-scrollbar {
 .sticky {
   position: fixed;
   top: 0;
+}
 
+.visible {
+
+  transition: all 0.7s ease 0s;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  opacity: 100%;
 }
 
 
@@ -142,45 +150,82 @@ min-height: 200px;
 /* border: 5px solid #790000; */
 
 }
-
-
-#jumbotron {
+/* HOMEPAGE */
+#homepage-container {
   display: flex;
-  justify-content: center;
-  flex-shrink: 1;
+  flex-direction: column;
+  align-items: center;
+  /* border: 3px solid red; */
+
+}
+
+#crypto-def {
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid red; */
+  gap: 20px;
+  align-items: center;
+  width: 30%;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
+
+}
+
+#contact-us-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 3px solid red; */
+
+}
+
+#contact-us {
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid red; */
+  gap: 20px;
+  align-items: center;
+  width: 30%;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
+
 }
 
 
+/* LEARN PAGE */
+#learn-title {
 
-.invest-container {
+
+}
+.learn-container {
   display: flex;
   flex-wrap: wrap;
 
   ;
 }
 
-.invest-flexbox {
+.learn-flexbox {
   display: flex;
   margin: 10px;
-  border: 3px solid black;
+
   border-radius: 5px;
   padding: .5em;
-  box-shadow: 2px 2px 7px black;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 
 }
 
-.invest-container> * {
+.learn-container> * {
   flex: 1 1 33%;
   background-color: #424242;
 
 }
 
-.invest-flexbox > h3 {
+.learn-flexbox > h3 {
   border-right: 2px solid #7A0202;
   padding: 5px;
 }
 
-.invest-flexbox > p {
+.learn-flexbox > p {
   padding-left: 5px;
 
 }
@@ -189,22 +234,22 @@ min-height: 200px;
 
 /* may need to do onmouseover to get the boxes on hover */
 
-/* .invest-item1{
+/* .learn-item1{
 
 
 
 
 }
-.invest-item2{
+.learn-item2{
 
 }
-.invest-item3{
+.learn-item3{
 
 }
-.invest-item4{
+.learn-item4{
 
 }
-.invest-item5{
+.learn-item5{
 
 } */
 
@@ -227,12 +272,13 @@ min-height: 200px;
   padding: 10px;
   width: 25%;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 100px;
 
 }
 
-input {
+input,
+textarea {
   background-color: #222222;
   color: #A6A6A6;
   border: none;
@@ -254,8 +300,44 @@ button {
     padding: 15px;
 
 }
+
+
 button:hover {
   color:rgba(122, 2, 2);
+  transition: all 0.4s ease 0s;
+}
+
+.btcPDF,
+.btcPDF:visited {
+  position: relative;
+  text-decoration: none;
+  color:#A6A6A6;
+}
+
+
+.btcPDF::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background:currentColor;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-in;
+
+  color:rgba(122, 2, 2);
+
+}
+
+.btcPDF:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  color:rgba(122, 2, 2);
+
+
 }
 .submit {
   margin: auto;
@@ -268,8 +350,11 @@ button:hover {
   transition: all 0.4s ease 0s;
   cursor: pointer;
   list-style: none;
+  text-align: center;
   margin-right: 20px;
 }
+
+
 .fomolabel:hover,
 .tax-label:hover,
 .dca-label:hover {
@@ -277,9 +362,7 @@ button:hover {
 
 }
 
-.info {
 
-}
 
 .fomolabel:hover .info,
 .tax-label:hover .info,
@@ -302,6 +385,7 @@ button:hover {
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   border-radius: 5px;
+  transition: all 0.25s ease 0s;
 
 
 }
@@ -314,6 +398,9 @@ button:hover {
   background-position: center;
   min-height: 75em;
   background-repeat: no-repeat;
+  background-image: url();
+
+  background-size: cover;
 
 }
 
@@ -373,6 +460,34 @@ button:hover {
 }
 
 
+/* FOOTER */
+footer {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  height: 100px;
+  margin-bottom: -10px;
+  margin-left: -10px;
+}
 
 
+#cw {
+  margin-left: 10px;
+  bottom: 0;
+  /* border: 1px solid red; */
+  margin-top: 60px;
+}
+#legal {
+  margin-left: 10px;
+  opacity: 60%;
+}
 
+
+/* BTC COLOR CHANGE TESTING  */
+/* .btc-up {
+  color: "red";
+}
+
+.cl {
+  color: red;
+} */
