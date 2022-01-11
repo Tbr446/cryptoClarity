@@ -5,11 +5,11 @@ const kelvinToFahrenheit = kelvinTemp =>
 
 export default st => html`
   <div class="currentview"><h2>Home</h2></div>
-  <h3>
+  <!-- <h3>
     Temperature in ${st.weather.city} is
     ${kelvinToFahrenheit(st.weather.temp)}F. It feels like
     ${kelvinToFahrenheit(st.weather.feelsLike)}F.
-  </h3>
+  </h3> -->
 
   <h4 id="btc-price">
     Bitcoin price is
