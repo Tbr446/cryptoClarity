@@ -2,7 +2,8 @@ import html from "html-literal";
 
 export default st => html`
   <section class="invest">
-    <form id="fomocalc-form" onsubmit="return false">
+  <div class="main-container">
+    <form id="fomocalc-form" name="fomoCalcForm" onsubmit="return false">
       <div class="fomocalc-container">
         <ul>
         <li class="fomolabel">
@@ -16,17 +17,18 @@ export default st => html`
           <input
             type="month"
             id="start"
-            name="invest-start"
+            name="investStart"
             placeholder="March 2015"
           />
           <label for="amount">Amount Purchased (in USD):</label>
 
           <input type="number" id="amount" name="USDamount" step="100" />
-          <button class="submit fas fa-calculator fa-2x"></button>
+          <button type="button" id="fomoButton" class="submit fas fa-calculator fa-2x"></button>
+          <input type="reset" />
         </div>
       </div>
     </form>
-    <form id="cap-gain-form" onsubmit="return false">
+    <form name="capGain" id="cap-gain-form" onsubmit="return false">
       <div class="tax-rate-calc">
         <ul ><li class="tax-label">
         <h1 class="tax-label">CAPITAL GAINS TAX CALCULATOR</h1>
@@ -34,29 +36,33 @@ export default st => html`
         </li></ul>
         <div class="taxcalc">
           <label for="taxable-income">Taxable Income</label>
-          <input type="number" id="taxable-income" name="taxable-income" />
+          <input type="number" id="taxable-income" name="taxableincome" />
 
           <label for="purch-price">Purchase Price</label>
-          <input type="number" id="purch-price" name="purch" />
+          <input type="number" id="purch-price" name="purchase" />
 
           <label for="sale-price">Sale Price</label>
           <input type="number" id="sale-price" name="sale" />
 
-          <label for="hold-term">Check for Long-Term (Held for over 1 yr)</label>
-          <input type="checkbox" id="hold-term" name="hold-term" />
+          <label for="hold-term">Long Term or Short Term (Held over/under 1yr)</label>
+          <select id="hold-term" name="holdterm">
+            <option value="1">Long Term</option>
+            <option value="">Short Term</option>
+            </select>
 
-          </form>
+
           <button
-            class="submit fas fa-calculator fa-2x"
-            type="submit"
+            id="tax-button" class="submit fas fa-calculator fa-2x"
+            type="button"
             form="cap-gain-form"
-            onclick="agiTest()"
-          ></button>
 
+          ></button>
+          <input type="reset" />
+          </form>
         </div>
       </div>
 
-    <form id="dca-form" onsubmit="return false">
+    <form id="dca-form" name = "dca-form" onsubmit="return false">
       <div class="dca-calc">
         <ul><li class="dca-label"><h1 class="dca-label">DOLLAR COST AVERAGE CALCULATOR</h1>
         <div class="info">Dollar Cost Averaging is a great way to begin investing. 1) Choose a lump sum that you would like to invest. 2) Choose a time frame for this investment. 3) Choose an interval for investing (ex: once a week, bi-weekly, monthly) </div>
@@ -76,7 +82,7 @@ export default st => html`
 
           <label for="sale-date">Sale Date</label>
           <input type="date" id="purch-date" name="sale-date" />
-          <button class="submit fas fa-calculator fa-2x"></button>
+          <button type="button" class="submit fas fa-calculator fa-2x"></button>
         </div>
       </div>
     </form>
@@ -227,84 +233,12 @@ const cryptoPrice = {
 const fomoAns = [];
 
 function fomoCalc(date, amount) {
-  const ans = Number(cryptoPrice.btc.date) * amount * crypto.btcPrice;
+  const ans = Number(cryptoPrice.btc.date) * amount * 10000;
   fomoAns.push(ans);
 }
 
-console.log(fomoCalc("b201010", 500));
+console.log(fomoCalc("201706", 500));
 //^^^^NEED TO GET ^^^ API TO ^^^ WORK BEFORE ^^^^^ THIS CALC ^^^^^ WILL WORK
-
-//CAP GAIN TAX CALC BELOW
-function taxCalc(purchPrice, sellPrice, longTerm, agi) {
-  class Tax {
-    constructor(purchPrice, sellPrice, longTerm, agi) {
-      this.purchPrice = purchPrice;
-      this.sellPrice = sellPrice;
-      this.longTerm = longTerm;
-      this.agi = agi;
-      this.gain = sellPrice - purchPrice;
-    }
-  }
-
-  const taxes = new Tax(purchPrice, sellPrice, longTerm, agi);
-
-  const due = {
-    bracket: "",
-    owed: "",
-    effective: "",
-    ltRate: ""
-  };
-
-  if (taxes.agi <= 10275) {
-    due.bracket = 0.1;
-    due.owed = taxes.agi * 0.1;
-    due.ltRate = 0;
-  }
-  if (taxes.agi > 10275 && taxes.agi < 41776) {
-    due.bracket = 0.12;
-    due.owed = 1027.5 + 0.12 * (taxes.agi - 10275);
-    due.ltRate = 0;
-  }
-  if (taxes.agi > 41775 && taxes.agi < 89076) {
-    due.bracket = 0.22;
-    due.owed = 4807.5 + 0.22 * (taxes.agi - 41775);
-    due.ltRate = 0.15;
-  }
-  if (taxes.agi > 89075 && taxes.agi < 170050) {
-    due.bracket = 0.24;
-    due.owed = 15213.5 + 0.24 * (taxes.agi - 89075);
-    due.ltRate = 0.15;
-  }
-  if (taxes.agi > 170050 && taxes.agi < 215950) {
-    due.bracket = 0.32;
-    due.owed = 34647.5 + 0.32 * (taxes.agi - 170050);
-    due.ltRate = 0.15;
-  }
-  if (taxes.agi > 215950 && taxes.agi < 539900) {
-    due.bracket = 0.35;
-    due.owed = 49335.5 + 0.35 * (taxes.agi - 215950);
-    due.ltRate = 0.2;
-    if (taxes.agi < 459750) {
-      due.ltRate = 0.15;
-    }
-  }
-  if (taxes.agi > 539899) {
-    due.bracket = 0.37;
-    due.owed = 162718 + 0.37 * (taxes.agi - 539900);
-    due.ltRate = 0.2;
-  }
-
-  due.effective = due.owed / taxes.agi;
-
-  if (longTerm == false) {
-    due.capGainTax = taxes.gain * due.effective;
-  } else {
-    due.capGainTax = taxes.gain * due.ltRate;
-  }
-
-  console.log(due);
-}
-taxCalc(1000, 21000, 1, 207050);
 
 //DCA CALC BELOW
 function dca(sum, time, interval) {
