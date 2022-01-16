@@ -85,8 +85,8 @@ function addEventListeners(st) {
           this.purchPrice = purchPrice;
           this.sellPrice = sellPrice;
           this.longTerm = longTerm;
-          this.agi = agi;
           this.gain = sellPrice - purchPrice;
+          this.agi = agi + this.gain;
         }
       }
 
@@ -150,11 +150,17 @@ function addEventListeners(st) {
       console.log(taxes);
 
       console.log(due);
-      document.getElementById("gain").innerHTML = due.gain;
-      document.getElementById("bracket").innerHTML = due.bracket;
-      document.getElementById("effective").innerHTML = due.effective;
-      document.getElementById("owed").innerHTML = due.owed;
-      document.getElementById("cap-gain").innerHTML = due.capGainTax;
+      document.getElementById("gain").innerHTML = usDollarize(due.gain);
+      document.getElementById("bracket").innerHTML = due.bracket * 100 + "%";
+      const effective = Number(due.effective);
+      document.getElementById("effective").innerHTML =
+        effective.toFixed(4) * 100;
+      document.getElementById("owed").innerHTML = usDollarize(
+        parseInt(due.owed)
+      );
+      document.getElementById("cap-gain").innerHTML = usDollarize(
+        due.capGainTax
+      );
     }
 
     taxCalc(parseInt(taxinc), parseInt(purch), parseInt(sale), parseInt(term));
@@ -353,7 +359,7 @@ function addEventListeners(st) {
         "November",
         "December"
       ];
-      let ans = `${match[month]} ${year}`;
+      let ans = `${match[month]} of ${year}`;
       return ans;
     }
     document.getElementById("btcDate").innerHTML = dateConv(date);
@@ -408,7 +414,11 @@ function addEventListeners(st) {
         dollarCost.userInterval = "month";
       }
 
-      const ans = `You will need to invest ${dollarCost.amount} dollars every ${dollarCost.userInterval} for the next ${dollarCost.horizon} days`;
+      const ans = `You will need to invest ${usDollarize(
+        parseInt(dollarCost.amount)
+      )} dollars every ${dollarCost.userInterval} for the next ${
+        dollarCost.horizon
+      } days`;
 
       console.log(ans);
       document.getElementById("dcaP").innerHTML = ans;

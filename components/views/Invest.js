@@ -31,7 +31,7 @@ export default st => html`
       </div>
     </form>
     <div id="trans3" class="answer-container-fomo">
-    <p>If you had invested <span id="btcAmount"></span> in Bitcoin sometime in <span id="btcDate"></span>, you would have close to <span id="today"></span> today.</p>
+    <p>If you had invested <span id="btcAmount"></span> in Bitcoin sometime in <span id="btcDate"></span>, it would be worth around <span id="today"></span> today.</p>
     </div>
     <form name="capGain" id="cap-gain-form" onsubmit="return false">
       <div class="tax-rate-calc">
@@ -40,7 +40,7 @@ export default st => html`
         <div class="info"> <p>Capital Gain taxes are the taxes you pay on <em>investment gains</em>. It can be hard to know what your tax liability might be as a result of an investment gain and crypto exchanges rarely alert you to the potential  tax consequences of selling crypto for a profit. This calculator will give you a ballpark estimate of taxes due for any given gain based on 2022 tax rates.</p></div>
         </li></ul>
         <div class="taxcalc">
-          <label for="taxable-income">Taxable Income</label>
+          <label for="taxable-income">Taxable Income (Estimate based on 2021, gain <em><strong>not</strong></em> included)</label>
           <input type="number" id="taxable-income" name="taxableincome" />
 
           <label for="purch-price">Purchase Price</label>
@@ -70,7 +70,7 @@ export default st => html`
       <p id="tax-gain">Your total gain is <span id="gain"></span></p>
       <p id="cap">Your estimated tax on <em><strong>this gain</strong></em> is <span id="cap-gain"></span></p>
       <p id="tax-bracket">Your tax bracket is <span id="bracket" ></span></p>
-      <p id="tax-effective">Your effective tax rate is <span id="effective" ></span></p>
+      <p id="tax-effective">Your effective tax rate is <span id="effective" ></span>%</p>
       <p class="tax-owed">The total tax you will owe for 2022 is around <span id="owed"></span></p>
       </div>
     <form id="dcaForm" name ="dcaForm" onsubmit="return false">
