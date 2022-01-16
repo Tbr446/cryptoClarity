@@ -1,4 +1,5 @@
 export default {
   header: "Invest",
-  view: "Invest"
+  view: "Invest",
+  crypto: {}
 };
