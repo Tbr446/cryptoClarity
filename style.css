@@ -302,10 +302,10 @@ min-height: 200px;
   width: 35%;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   gap: 15px;
-  margin-bottom: 100px;
+  margin-bottom: 25px;
 
 }
-
+select,
 input,
 textarea {
   background-color: #222222;
@@ -421,6 +421,48 @@ button:hover {
 
 }
 
+.answerContainerCapGain,
+.answer-container-fomo,
+.answer-container-dca
+
+ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border:#7A0202 solid 2px;
+  margin-bottom: 50px;
+  min-height: 200px;
+}
+.answerContainerCapGain > p{
+  /* display: none; */
+}
+
+/* #dcaP {
+  transition: opacity 2s;
+  border: #7A0202 solid 2px;
+} */
+/* .answer-container-dca {
+  opacity: 1;
+  transition: opacity 2s;
+
+
+} */
+
+#trans1,
+#trans2,
+#trans3 {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+/* .hidden {
+  display: none;
+} */
+
+
+
+/* -----HOME SECTION----- */
 .home-section {
   display: flex;
   align-items: center;
@@ -491,6 +533,8 @@ button:hover {
 }
 
 
+
+
 /* FOOTER */
 footer {
   display: flex;
@@ -522,3 +566,5 @@ footer {
 .btc-down {
   color:rgba(122, 2, 2);
 }
+
+

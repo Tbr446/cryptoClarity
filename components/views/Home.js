@@ -12,8 +12,9 @@ export default st => html`
 
       <h4 id="btc-price">
         Bitcoin price is
-        <span class=${st.crypto.styling}>${st.crypto.btcPrice}</span>
+        <span class=${st.crypto.styling}>${st.crypto.btcPriceUSD}</span>
       </h4>
+      <div id="test">${st.crypto.btcPriceUSD}</div>
     </div>
 
     <div id="contact-us-container">
