@@ -2,5 +2,6 @@ export default {
   header: "My Home Page",
   view: "Home",
   weather: {},
-  crypto: {}
+  crypto: {},
+  emails: []
 };
