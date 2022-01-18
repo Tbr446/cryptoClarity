@@ -8,7 +8,8 @@ html {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
  color: #A6A6A6;
  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
              0px 8px 13px rgba(0,0,0,0.1),
@@ -28,7 +29,7 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   background-image: linear-gradient(to right, #434343 0%, black 100%);
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.4rem;
   letter-spacing: .075rem;
 
@@ -56,8 +57,6 @@ body::-webkit-scrollbar {
   position: sticky;
   height: 70px;
   margin: 0px 10px;
-
-
 }
 
 .navlogo {
@@ -162,23 +161,58 @@ min-height: 200px;
   /* border: 3px solid red; */
 
 }
-
-#crypto-def {
+.homepage-summary > h1{
+  text-align: center;
+}
+#mission {
   display: flex;
-  flex-direction: column;
-  /* border: 3px solid red; */
-  gap: 20px;
+  gap:.5rem;
   align-items: center;
-  width: 30%;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+#topics {
+  display: flex;
+  /* border: 3px solid red; */
+  min-height: 300px;
+}
+
+#topics > div {
+  display: flex;
+  height: 100px;
+  border-radius: 20px;
+  align-items:center;
+  justify-content: center;
+  flex-grow: 2;
+
+}
+
+#topics > div:hover {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  font-size:x-large;
+  box-shadow: rgba(122, 0, 0, 0.25) 0px 54px 55px, rgba(122, 0, 0, 0.12) 0px -12px 30px, rgba(122, 0, 0, 0.12) 0px 4px 6px, rgba(122, 0, 0, 0.17) 0px 12px 13px, rgba(122, 0, 0, 0.09) 0px -3px 5px;
+  font-weight: 600;
+  color: #790000;
 
 
 }
+
+#topics > #one {
+  align-self: flex-start;
+}
+#topics > #two {
+  align-self: center;
+}
+#topics > #three {
+  align-self: flex-end;
+}
+
 .main-container {
   box-shadow: rgba(121, 0, 0, 0.56) 0px 11px 45px 2px;
   border-radius: 0 0 3% 3%;
   min-width: 85%;
   margin: 0px 10px;
+  padding: 20px;
 
 }
 .homepage-summary {
@@ -187,6 +221,36 @@ min-height: 200px;
   min-width: 85%;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border-radius: 3%;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.priceTracker {
+  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  min-width: 80%;
+  margin: 50px;
+
+}
+.priceTracker > div {
+  display: flex;
+  padding: 5px;
+  /* border: 3px solid red; */
+
+}
+.priceTracker > div > h3,
+.priceTracker > div > h4 {
+  display: flex;
+  border-right: 2px solid #7A0202;
+  padding: 5px;
+  margin: 5px;
+  align-self: center;
 }
 
 #contact-us-container {
@@ -197,6 +261,8 @@ min-height: 200px;
   flex-wrap: wrap;
   gap: 100px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin: 20px;
+  padding: 20px;
 
 
 
@@ -212,6 +278,8 @@ min-height: 200px;
   width: 30%;
   box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   min-width: 300px;
+  margin: 10px;
+  padding: 15px;
 
 
 }
@@ -223,6 +291,9 @@ min-height: 200px;
 
 /* LEARN PAGE */
 #learn-title {
+  text-align: center;
+  padding: 30px;
+  margin: 30px;
 
 
 }
@@ -290,6 +361,7 @@ min-height: 200px;
   justify-content: center;
   align-items: center;
   min-height: 400px;
+  text-align: center;
 
 }
 .fomocalc,
@@ -430,7 +502,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  border:#7A0202 solid 2px;
+  /* border:#7A0202 solid 2px; */
   margin-bottom: 50px;
   min-height: 200px;
 }

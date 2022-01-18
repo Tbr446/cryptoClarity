@@ -46,6 +46,7 @@ const usDollarize = amount => {
   answer = "$" + answer;
   return answer;
 };
+//ADD EVENT LISTENERS
 function addEventListeners(st) {
   document.querySelectorAll("nav a").forEach(navLink =>
     navLink.addEventListener("click", event => {
@@ -60,7 +61,6 @@ function addEventListeners(st) {
   };
 
   let navbar = document.getElementById("nav-links");
-  let logo = document.getElementById("navlogo");
   let sticky = navbar.offsetTop;
 
   function stickyNav() {
@@ -433,6 +433,31 @@ function addEventListeners(st) {
   // document.querySelector("#dca").addEventListener("click", () => {
   //   document.querySelector(".answer-container-dca").classList.toggle("hidden");
   // });
+
+  if (st.view === "Home") {
+    document.getElementById("newsletter").addEventListener("submit", event => {
+      event.preventDefault();
+
+      // const inputList = event.target.elements;
+      // console.log("Input Element List", inputList);
+
+      // const requestData = {
+      //   name: inputList.name.value,
+      //   emailAddress: inputList.emailAddress.value
+      // };
+      // console.log("request Body", requestData);
+      // axios
+      //   .post(`http://localhost:4040/emails`, requestData)
+      //   .then(response => {
+      //     // Push the new email addy onto the Home state emails attribute, so it can be displayed in the emails list
+      //     state.Home.emails.push(response.data);
+      //     router.navigate("/Email");
+      //   })
+      //   .catch(error => {
+      //     console.log("It puked", error);
+      //   });
+    });
+  }
 }
 
 router.hooks({
@@ -481,6 +506,16 @@ router.hooks({
           };
           greenOrRed(state.Home.crypto.change24hr);
 
+          done();
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+
+      axios
+        .get(`http://localhost:4040/emails`)
+        .then(response => {
+          state.Home.emails = response.data;
           done();
         })
         .catch(error => {
